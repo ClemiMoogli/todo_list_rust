@@ -46,6 +46,7 @@ function render() {
     listEl.replaceChildren();
     for (const task of tasks) {
         const li = document.createElement("li");
+        const label = document.createElement("label");
         if (task.state === "Finished") {
           li.classList.add("done");
         }
@@ -61,8 +62,8 @@ function render() {
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "X";
         deleteBtn.addEventListener("click", () => deleteTask(task.id));
-
-        li.append(checkbox, span, deleteBtn);
+        label.append(checkbox, span);
+        li.append(label, deleteBtn);
         listEl.append(li);
     }
 }

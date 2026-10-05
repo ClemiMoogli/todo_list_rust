@@ -101,8 +101,20 @@ h1 {
   justify-content:space-between;
   align-items:center;
   margin: 5px 0;
-  padding: 10px 10px;
   border: 2px solid black;
+}
+
+#task-list label {
+  display: flex;
+  width:100%;
+  justify-content: start;
+  gap: 5%;
+  align-items: center;
+  padding: 10px;
+}
+
+#task-list button {
+  margin: 10px;
 }
 
 /* les etats */
