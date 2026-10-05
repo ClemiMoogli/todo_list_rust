@@ -50,9 +50,10 @@ function render() {
           li.classList.add("done");
         }
         
-        const validateBtn = document.createElement("button");
-        validateBtn.textContent = "Validate Task";
-        validateBtn.addEventListener("click", () => validateTask(task.id));
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.state === "Finished";
+        checkbox.addEventListener("change", () => validateTask(task.id));
 
         const span = document.createElement("span");
         span.textContent = task.name;
@@ -61,7 +62,7 @@ function render() {
         deleteBtn.textContent = "X";
         deleteBtn.addEventListener("click", () => deleteTask(task.id));
 
-        li.append(validateBtn, span, deleteBtn);
+        li.append(checkbox, span, deleteBtn);
         listEl.append(li);
     }
 }
